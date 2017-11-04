@@ -52,7 +52,7 @@ public class Title {
     public Title(Integer empNo, String titleName, TimeProvider timeProvider) {
         this.id = new TitleId(empNo, titleName, timeProvider);
         this.timeProvider = timeProvider;
-        toDate = Constans.MAX_DATE;
+        toDate = TimeProvider.MAX_DATE;
     }
 
     public String getName() {

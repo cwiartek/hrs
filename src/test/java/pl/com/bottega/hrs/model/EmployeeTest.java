@@ -78,7 +78,7 @@ public class EmployeeTest {
         assertEquals(3,history.size());
         assertEquals(Arrays.asList(SALARY, SALARY/2, SALARY*2),history.stream().map((s) -> s.getValue()).collect(Collectors.toList()));
         assertEquals(Arrays.asList(t0,t1,t2),history.stream().map((s) -> s.getFromDate()).collect(Collectors.toList()));
-        assertEquals(Arrays.asList(t1,t2,Constans.MAX_DATE),history.stream().map((s) -> s.getToDate()).collect(Collectors.toList()));
+        assertEquals(Arrays.asList(t1,t2,TimeProvider.MAX_DATE),history.stream().map((s) -> s.getToDate()).collect(Collectors.toList()));
 
     }
     @Test
@@ -136,7 +136,7 @@ public class EmployeeTest {
         //then
         Collection<DepartmentAssignment> history = sut.getDepartmentHistory();
         assertEquals(Arrays.asList(t0,t1),history.stream().map(DepartmentAssignment::getFromDate).collect(Collectors.toList()));
-        assertEquals(Arrays.asList(Constans.MAX_DATE,t2),history.stream().map(DepartmentAssignment::getToDate).collect(Collectors.toList()));
+        assertEquals(Arrays.asList(TimeProvider.MAX_DATE,t2),history.stream().map(DepartmentAssignment::getToDate).collect(Collectors.toList()));
     }
 
     @Test
@@ -183,7 +183,7 @@ public class EmployeeTest {
         assertEquals(3, history.size());
         assertEquals(Arrays.asList("cleaner", "senior cleaner", "CEO"),history.stream().map(Title::getName).collect(Collectors.toList()));
         assertEquals(Arrays.asList(t0, t1, t2),history.stream().map(Title::getFromDate).collect(Collectors.toList()));
-        assertEquals(Arrays.asList(t1, t2, Constans.MAX_DATE),history.stream().map(Title::getToDate).collect(Collectors.toList()));
+        assertEquals(Arrays.asList(t1, t2, TimeProvider.MAX_DATE),history.stream().map(Title::getToDate).collect(Collectors.toList()));
     }
 
     private String getCurrentTitleName() {

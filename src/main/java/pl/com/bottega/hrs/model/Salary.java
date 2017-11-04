@@ -45,7 +45,7 @@ public class Salary {
     private Integer salary;
 
     @Transient
-    private TimeProvider timeProvider;
+    private TimeProvider timeProvider = new StandardTimeProvider();
 
     @Column(name = "to_date")
     private LocalDate toDate;
@@ -57,7 +57,7 @@ public class Salary {
         id = new SalaryId(empNo,timeProvider);
         this.salary = salary;
         this.timeProvider = timeProvider;
-        toDate = Constans.MAX_DATE;
+        toDate = TimeProvider.MAX_DATE;
 
     }
 

@@ -15,7 +15,12 @@ public class Department {
     private String deptNo;
 
     @Column(name = "dept_name")
-    private String deptName;
+    private String name;
+
+    public Department(String deptNo, String name) {
+        this.deptNo = deptNo;
+        this.name = name;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -30,5 +35,11 @@ public class Department {
     @Override
     public int hashCode() {
         return deptNo != null ? deptNo.hashCode() : 0;
+    }
+
+    public String getNumber() {
+
+        return deptNo;
+
     }
 }

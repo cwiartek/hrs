@@ -44,7 +44,7 @@ public class DepartmentAssignment {
         this.timeProvider = timeProvider;
         id = new DepartmentAssignmentId(empNo, department);
         fromDate = timeProvider.today();
-        toDate = Constans.MAX_DATE;
+        toDate = TimeProvider.MAX_DATE;
 
     }
 
