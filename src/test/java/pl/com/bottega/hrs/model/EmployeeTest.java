@@ -27,25 +27,20 @@ public class EmployeeTest {
     @Test
     public void shouldReturnNoSalaryIfNotSalaryDefined() {
 
-
         //then
-
         assertFalse(getCurrentSalary().isPresent());
     }
 
     @Test
     public void shouldAddAndReturnEmployeeSalary(){
 
-
         //when
-
         sut.changeSalary(SALARY);
 
         //then
         Optional<Salary> salaryOptional = sut.getCurrentSalary();
         assertTrue(getCurrentSalary().isPresent());
         assertEquals(SALARY,getCurrentSalaryValue());
-
     }
 
     @Test
@@ -57,7 +52,6 @@ public class EmployeeTest {
         //then
         assertEquals(SALARY/2, getCurrentSalaryValue());
         assertEquals(1,sut.getSalaries().size());
-
     }
 
     @Test
