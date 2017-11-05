@@ -1,6 +1,8 @@
 package pl.com.bottega.hrs.model;
 
 
+import pl.com.bottega.hrs.infrastructure.StandardTimeProvider;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -24,7 +26,7 @@ public class Title {
 
         private String title;
 
-        TitleId() {}
+        public TitleId() {}
 
         public TitleId(Integer empNo, String title, TimeProvider timeProvider) {
             this.empNo = empNo;
@@ -39,7 +41,7 @@ public class Title {
     }
 
     @Transient
-    private TimeProvider timeProvider;
+    private TimeProvider timeProvider = new StandardTimeProvider();
 
     @EmbeddedId
     private TitleId id;

@@ -21,6 +21,7 @@ public class Department {
         this.deptNo = deptNo;
         this.name = name;
     }
+    Department() {}
 
     @Override
     public boolean equals(Object o) {

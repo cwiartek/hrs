@@ -1,5 +1,7 @@
 package pl.com.bottega.hrs.model;
 
+import pl.com.bottega.hrs.infrastructure.StandardTimeProvider;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -21,7 +23,7 @@ public class DepartmentAssignment {
         @JoinColumn(name = "dept_no")
         private Department department;
 
-        DepartmentAssignmentId() {}
+        public DepartmentAssignmentId() {}
 
         public DepartmentAssignmentId(Integer empNo, Department department) {
             this.empNo = empNo;
@@ -29,7 +31,7 @@ public class DepartmentAssignment {
         }
     }
     @Transient
-    private TimeProvider timeProvider;
+    private TimeProvider timeProvider =new StandardTimeProvider();
 
     @EmbeddedId
     private DepartmentAssignmentId id;
@@ -39,6 +41,8 @@ public class DepartmentAssignment {
 
     @Column(name = "to_date")
     private LocalDate toDate;
+
+    public DepartmentAssignment(){}
 
     public DepartmentAssignment(Integer empNo, Department department, TimeProvider timeProvider) {
         this.timeProvider = timeProvider;
@@ -81,7 +85,7 @@ public class DepartmentAssignment {
     }
 
 
-    public DepartmentAssignment(){}
+
 
 
 }

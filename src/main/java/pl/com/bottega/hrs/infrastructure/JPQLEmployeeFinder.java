@@ -1,5 +1,6 @@
 package pl.com.bottega.hrs.infrastructure;
 
+import pl.com.bottega.hrs.application.DetailedEmployeeDto;
 import pl.com.bottega.hrs.application.EmployeeFinder;
 import pl.com.bottega.hrs.application.EmployeeSearchCriteria;
 import pl.com.bottega.hrs.application.EmployeeSearchResult;
@@ -42,5 +43,12 @@ public class JPQLEmployeeFinder implements EmployeeFinder {
         }
         result.setResults(query.getResultList());
         return result;
+    }
+    @Override
+
+    public DetailedEmployeeDto getEmployeeDetails(Integer empNo) {
+
+        return null;
+
     }
 }

@@ -3,10 +3,8 @@ package pl.com.bottega.hrs.infrastructure;
 import org.junit.Test;
 import pl.com.bottega.hrs.model.Address;
 import pl.com.bottega.hrs.model.Employee;
-import pl.com.bottega.hrs.model.StandardTimeProvider;
 
 import javax.persistence.EntityManager;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDate;
 
 import static junit.framework.TestCase.assertNotNull;

@@ -1,5 +1,7 @@
 package pl.com.bottega.hrs.model;
 
+import pl.com.bottega.hrs.infrastructure.StandardTimeProvider;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -31,6 +33,30 @@ public class Salary {
             this.timeProvider = timeProvider;
         }
 
+        public Integer getEmpNo() {
+            return empNo;
+        }
+
+        public void setEmpNo(Integer empNo) {
+            this.empNo = empNo;
+        }
+
+        public LocalDate getFromDate() {
+            return fromDate;
+        }
+
+        public void setFromDate(LocalDate fromDate) {
+            this.fromDate = fromDate;
+        }
+
+        public TimeProvider getTimeProvider() {
+            return timeProvider;
+        }
+
+        public void setTimeProvider(TimeProvider timeProvider) {
+            this.timeProvider = timeProvider;
+        }
+
         public boolean startsToday() {
 
             return fromDate.isEqual(LocalDate.now());
@@ -58,9 +84,15 @@ public class Salary {
         this.salary = salary;
         this.timeProvider = timeProvider;
         toDate = TimeProvider.MAX_DATE;
-
     }
 
+    public Integer getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Integer salary) {
+        this.salary = salary;
+    }
 
     public boolean isCurrent() {
         return toDate.isAfter(timeProvider.today());
